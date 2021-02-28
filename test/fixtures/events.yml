@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  image: MyString
+  event_date: 2021-02-16
+  event_at: 2021-02-16 05:52:27
+  price: 1
+  place: MyString
+  genre: MyString
+  detail: MyString
+
+two:
+  title: MyString
+  image: MyString
+  event_date: 2021-02-16
+  event_at: 2021-02-16 05:52:27
+  price: 1
+  place: MyString
+  genre: MyString
+  detail: MyString

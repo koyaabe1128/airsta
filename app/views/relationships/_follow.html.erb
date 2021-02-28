@@ -1,0 +1,9 @@
+<% if current_user.following?(user) %>
+  <div id="follow_btn_<%= user.id %>">
+    <%= link_to "フォロー中", relationship_path, method: :delete, id: user.id, remote: true, class: "border my-btn" %>
+  </div>
+<% else %>
+  <div id="follow_btn_<%= user.id %>">
+    <%= link_to "フォローする", relationships_path(follow_id: user.id), method: :post, remote: true, class: "border my-btn" %>
+  </div>
+<% end %>

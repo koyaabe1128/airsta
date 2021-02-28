@@ -1,0 +1,15 @@
+<% if current_user.like?(event) %>
+  <div id="likes_btn_<%= event.id %>">
+    <%= link_to event_like_path(event), method: :delete, remote: true do %>
+      <i class="fas fa-heart like-btn"></i>
+    <% end %>
+  </div>
+<% else %>
+  <div id="likes_btn_<%= event.id %>">
+    <%= link_to event_likes_path(event), method: :post, remote: true do %>
+       <i class="far fa-heart unlike-btn"></i>
+    <% end %>
+  </div>
+<% end %>
+
+

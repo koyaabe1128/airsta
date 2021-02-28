@@ -1,0 +1,71 @@
+<h2 class ="offset-1 mt-4 font-weight-bold">プロフィール編集</h2>
+<hr>
+
+<%= form_with(model: @user, local:true,) do |f| %>
+
+<div class ="row mt-5">
+  <div class ="col-xl-5">
+    <div class ="row">
+      <div class ="mx-auto">
+        <% if @user.image? %>
+          <%= image_tag @user.image.url, class: "img-responsive center-block icon" %>
+        <% end %>
+      </div>
+    </div>
+    <div class="form-group row mt-4">
+      <div class ="col-6 col-md-3 font-weight-bold">
+        <%= f.label :image, '画像' %>
+      </div>
+      <div class ="col-11 col-md-7">
+        <%= f.file_field :image, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+  <div class ="col-xl-7">
+    
+  
+      <div class="form-group row">
+        <div class ="col-6 col-md-3 font-weight-bold">
+          <%= f.label :name, '名前' %>
+        </div>
+        <div class ="col-11 col-md-7">
+          <%= f.text_field :name , class: 'form-control' %>
+        </div>
+      </div>
+        
+      <div class = "form-group row mt-4">
+        <div class = "col-6 col-md-3 font-weight-bold">
+           <%= f.label :genre, 'ジャンル' %>
+        </div>
+        <div class ="col-11 col-md-7">
+          <%= f.text_field :genre, class: 'form-control' %>
+        </div>
+      </div>
+       
+      <div class="form-group row mt-4">
+        <div class ="col-6 col-md-3 font-weight-bold">
+          <%= f.label :place, '主な活動場所' %>
+        </div>
+        <div class ="col-11 col-md-7">
+          <%= f.text_field :place, class: 'form-control' %>
+        </div>
+      </div>
+      
+      <div class="form-group row mt-4">
+        <div class ="col-6 col-md-3 font-weight-bold">
+          <%= f.label :introduction, '自己紹介文' %>
+        </div>
+        <div class ="col-11 col-md-7">
+          <%= f.text_area :introduction, class: 'form-control', size: "20x6" %>
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="form-group mx-auto mt-4">        
+          <%= f.submit "完了", class: 'border my-btn' %>
+        </div>
+      </div>
+      
+    <% end %>
+  </div>
+</div>

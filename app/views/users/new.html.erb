@@ -1,0 +1,59 @@
+<div class ="row">
+  <div class="card mt-5 mx-auto" style="width: 25rem;">
+    <div class="card-body">
+  
+      <div class="row">
+        <h5 class ="mx-auto my-3 font-weight-bold">新規登録</h5>
+      </div>
+      
+      <%= form_with(model: @user, local:true) do |f| %>
+
+        <div class="form-group">
+          <div class ="row col-10 offset-1">
+            <%= f.label :name, 'ユーザー名' %>
+          </div>
+          <div class ="row col-10 mx-auto">
+            <%= f.text_field :name, :placeholder => "例）Taro Airsta", class: "form-control" %>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <div class ="row col-10 offset-1">
+            <%= f.label :email, 'メールアドレス' %>
+          </div>
+          <div class ="row col-10 mx-auto">
+            <%= f.text_field :email, :placeholder => "info@sample.com", class: "form-control" %>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <div class ="row col-10 offset-1">
+            <%= f.label :password, 'パスワード' %>
+          </div>
+          <div class ="row col-10 mx-auto">
+            <%= f.password_field :password, :placeholder => "パスワード", class: "form-control" %>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <div class ="row col-10 offset-1">
+            <%= f.label :password_confirmation, '確認パスワード' %>
+          </div>
+          <div class ="row col-10 mx-auto">
+            <%= f.password_field :password_confirmation, :placeholder => "再度パスワードを入力", class: "form-control" %>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="form-group mx-auto mt-3">        
+            <%= f.submit "新規登録", class: 'btn btn-info btn-sm' %>
+          </div>
+        </div>
+      
+      <% end %>
+    </div>
+  </div>
+</div>   
+
+
+

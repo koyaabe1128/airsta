@@ -1,0 +1,98 @@
+<%= form_with(model: event, local:true,) do |f| %>
+
+  <% if event.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+        <% event.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class ="row mt-5">
+  <div class ="col-6">
+    <div class ="row">
+      <div class ="mx-auto">
+        <% if event.image? %>
+          <%= image_tag event.image.url, class: "img-responsive center-block events-img" %>
+        <% end %>
+      </div>
+    </div>
+    <div class="form-group row mt-4">
+      <div class ="col-6 col-md-3 font-weight-bold">
+        <%= f.label :image, '画像' %>
+      </div>
+      <div class ="col-11 col-md-7">
+        <%= f.file_field :image, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+  <div class ="col-6">
+    <div class="form-group row">
+      <div class ="col-6 col-md-3 font-weight-bold">
+        <%= f.label :title, 'タイトル' %>
+      </div>
+      <div class ="col-11 col-md-7">
+        <%= f.text_field :title , class: 'form-control' %>
+      </div>
+    </div>
+      
+    <div class = "form-group row">
+      <div class = "col-6 col-md-3 font-weight-bold">
+         <%= f.label :event_at, '日時' %>
+      </div>
+      <div class ="col-11 col-md-7">
+        <%= f.datetime_select :event_at, use_month_numbers: true, prompt: "--", start_year: (Time.now.year), end_year: (Time.now.year + 2), minute_step: 10 %>
+      </div>
+    </div>
+     
+    <div class="form-group row">
+      <div class ="col-6 col-md-3 font-weight-bold">
+        <%= f.label :place, '場所' %>
+      </div>
+      <div class ="col-11 col-md-7">
+        <%= f.text_field :place, class: 'form-control' %>
+      </div>
+    </div>
+    
+    <div class="form-group row">
+      <div class ="col-6 col-md-3 font-weight-bold">
+        <%= f.label :price, '料金' %>
+      </div>
+      <div class ="col-11 col-md-7">
+        <%= f.number_field :price, class: 'form-control', min: "0", max: "50000" %>
+      </div>
+    </div>
+      
+    <div class="form-group row">
+      <div class ="col-6 col-md-3 font-weight-bold">
+        <%= f.label :genre, 'ジャンル' %>
+      </div>
+      <div class ="col-11 col-md-7">
+        <%= f.text_field :genre, class: 'form-control' %>
+      </div>
+    </div>
+      
+    <div class="form-group row">
+      <div class ="col-6 col-md-3 font-weight-bold">
+        <%= f.label :detail, '説明欄' %>
+      </div>
+      <div class ="col-11 col-md-7">
+        <%= f.text_area :detail, class: 'form-control', size: "20x6" %>
+      </div>
+    </div>
+    
+    <div class ="row">
+      <div class="form-group mx-auto">        
+        <%= f.submit "完了", class: 'border my-btn' %>
+      </div>    
+    </div>
+  </div>
+</div>
+
+  
+  
+  
+<% end %>
+

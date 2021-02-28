@@ -13,3 +13,74 @@
  *= require_tree .
  *= require_self
  */
+ body {
+    padding-top: 70px;
+    background-color: #fafafa;
+}
+
+textarea {
+  resize: none;
+  
+}
+
+.logo {
+    font-family: 'Georgia';
+}
+
+.nav-btn-size {
+    font-size: 1.4em;
+}
+
+.like-btn {
+    color :#e54747;
+    font-size: 1.6em;
+}
+
+.unlike-btn {
+    color : black;
+    font-size: 1.6em;
+}
+
+.icon {
+    display: block;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+}
+
+.followings-icon {
+    display: block;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+
+
+.font-black {
+    color: black;
+}
+
+.no-underline {
+    text-decoration:none !important;
+}
+
+.my-btn {
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #fafafa;
+    border-radius: 3px;
+    text-decoration: none !important;
+    padding: 5px 20px;
+}
+
+.user-btn {
+    color: black;
+    font-size: 15px;
+    text-decoration: none !important;
+}
+
+.followings-size {
+    height: 35px;
+}

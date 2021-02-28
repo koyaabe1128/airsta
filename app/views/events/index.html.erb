@@ -1,0 +1,43 @@
+<div class ="row">
+  <% @events.each do |event| %>
+    <div class ="col-md-6 my-4">
+      <div class ="row">
+        <div>
+          <%= link_to user_path(event.user_id), class:"user-btn" do %>
+            <div class =""><i class="far fa-user-circle ml-3 mr-2"></i><%= event.user.name %></div>
+          <% end %>
+        </div>
+      </div>
+      <div class ="row">
+        <div class ="col-lg-5 mb-4">
+          <div class ="row">
+            <div class ="mx-auto">
+              <%= image_tag event.image.url, class: "img-responsive center-block border events-img-index" %>
+            </div>
+          </div>
+        </div>
+        <div class ="col-lg-7">
+          <div class ="row">
+            <div class ="col-10">
+              <%= link_to event_path(event), class: "font-black font-weight-bold no-underline" do %>
+                <h4><%= event.title %></h4>
+              <% end %>
+            </div>
+            
+            <h6 class ="col-6 col-xl-4 font-weight-bold">日時</h6>
+            <div class ="col-10 col-xl-7"><%= event.event_at %></div>
+            
+            <h6 class ="col-6 col-xl-4 font-weight-bold">場所</h6>
+            <div class ="col-10 col-xl-7"><%= event.place %></div>
+            
+            <h6 class ="col-6 col-xl-4 font-weight-bold">料金</h6>
+            <div class ="col-10 col-xl-7"><%= event.price %>円</div>
+            
+            <h6 class ="col-6 col-xl-4 font-weight-bold">ジャンル</h6>
+            <div class ="col-10 col-xl-7"><%= event.genre %></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,41 @@
+<header>
+  <div class='fixed-top'>
+    <nav class="navbar navbar-expand navbar-light bg-white border-bottom">
+      <!-- 投稿一覧ページへ -->
+      <a href="/" class="navbar-brand"><h4 class ="ml-md-5 logo">Airsta</h4></a>
+      
+      <!-- メニュー項目 -->
+      <div class ="collapse navbar-collapse justify-content-end">
+        <ul class="navbar-nav">
+          <% if logged_in? %>
+            <li class="nav-item mr-3">
+              <%= link_to events_path, class: 'nav-link' do %>
+                <i class="fa fa-search nav-btn-size"></i>
+              <% end %>
+            </li>
+            <li class="nav-item mr-3">
+              <%= link_to new_event_path, class: 'nav-link' do %>
+                <i class="far fa-plus-square nav-btn-size"></i>
+              <% end %>
+            </li>
+            <li class="nav-item dropdown mr-3">
+              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><i class="far fa-user-circle nav-btn-size"></i></a>
+              <ul class="dropdown-menu dropdown-menu-right">
+                <li class="dropdown-item"><%= link_to 'プロフィール', user_path(current_user), class: "font-black no-underline" %></li>
+                <li class="dropdown-divider"></li>
+                <li class="dropdown-item"><%= link_to 'ログアウト', logout_path, method: :delete, class: "font-black no-underline" %></li>
+              </ul>
+            </li>
+          <% else %>
+            <div class ="row">
+              <li class="nav-item mr-5"><%= link_to "ログイン", login_path, class: 'nav-link' %></li>
+              <li class="nav-item mr-5"><%= link_to "新規登録", signup_path, class: 'nav-link' %></li>
+            </div>
+          <% end %>
+        </ul>
+      </div>
+       
+      
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,77 @@
+<div class ="row">
+  <%= link_to events_path, class:"my-3" do %>
+    <i class="fas fa-arrow-left fa-2x font-black"></i>
+  <% end %>
+</div>
+
+<div class ="row">
+  
+  <div class ="col-xl-6">
+    <div class ="row">
+      <div class ="offset-2">
+        <i class="far fa-user-circle fa-2x"></i>
+      </div>  
+      <div class ="col-7 pt-1">
+        <%= link_to user_path(@event.user_id), class:"font-weight-bold font-black no-underline" do %>
+          <h5><%= @event.user.name %></h5>
+        <% end %>
+      </div>
+    </div>
+    <div class ="row">
+      <div class ="mx-auto">
+        <% if @event.image? %>
+          <%= image_tag @event.image.url, class: "img-responsive center-block border events-img-show" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  
+  <div class ="col-xl-6 mt-5">
+    <div class ="row offset-1">
+      <h2 class ="col-11 mb-5 font-weight-bold"><%= @event.title %></h2>
+    </div>
+    <div class ="row offset-1">
+      <h6 class ="col-6 col-md-3 font-weight-bold">日時</h6>
+      <div class ="col-10 col-md-7"><%= @event.event_at %></div>
+      
+      <h6 class ="col-6 col-md-3 font-weight-bold">場所</h6>
+      <div class ="col-10 col-md-7"><%= @event.place %></div>
+      
+      <h6 class ="col-6 col-md-3 font-weight-bold">料金</h6>
+      <div class ="col-10 col-md-7"><%= @event.price %>円</div>
+      
+      <h6 class ="col-6 col-md-3 font-weight-bold">ジャンル</h6>
+      <div class ="col-10 col-md-7"><%= @event.genre %></div>
+    
+      <h5 class ="col-6 col-md-3 mt-4 font-weight-bold">説明欄</h5>
+      <div class ="col-10"><%= @event.detail %></div>
+    </div>
+      
+  </div>
+  
+</div>
+
+<div class ="row col-xl-6 mt-3">
+  
+  <div class ="row mx-auto">
+    <% if current_user == @event.user %>
+    　<div>
+        <%= link_to edit_event_path(@event), class: "no-underline" do %>
+          <div class="border my-btn"><i class="fas fa-edit mr-1"></i>編集する</div>
+        <% end %>
+    　</div>
+    　<div>
+        <%= link_to @event, method: :delete, data: { confirm: "本当に削除しますか？" }, class: "no-underline" do %>
+          <div class="border my-btn"><i class="fas fa-trash-alt mr-1"></i>削除する</div>
+        <% end %>
+    　</div>
+    <% end %>
+  
+    
+    <div class ="ml-4 " id="likes_btn_<%= @event.id %>">
+      <%= render "likes/like", event: @event %>
+    </div>    
+  </div>
+  
+</div>
+
