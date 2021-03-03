@@ -50,7 +50,7 @@
             </div>
             <div class ="row">
               <div class ="ml-5 font-weight-bold">日時</div>
-              <div class ="ml-2"><%= event.event_at %></div>
+              <div class ="ml-2"><%= event.event_at.strftime("%m/%d %H:%M~") %></div>
             </div>
             <div class ="row">
               <div class ="ml-5 font-weight-bold">場所</div>
@@ -70,3 +70,6 @@
     </div>
   <% end %>
 </div>
+
+
+¥
