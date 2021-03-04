@@ -10,9 +10,9 @@ class User < ApplicationRecord
 
   has_secure_password
   
-  has_many :events
+  has_many :events, dependent: :destroy
   
-  has_many :likes
+  has_many :likes, dependent: :destroy
   has_many :like_events, through: :likes, source: :event
   
   has_many :relationships, dependent: :destroy

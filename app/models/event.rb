@@ -9,7 +9,7 @@ class Event < ApplicationRecord
   validates :event_at, presence: true
   validates :image, presence: true
   
-  has_many :likes
+  has_many :likes, dependent: :destroy
   
   mount_uploader :image, ImageUploader
 

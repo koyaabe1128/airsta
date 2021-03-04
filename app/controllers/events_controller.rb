@@ -45,9 +45,11 @@ class EventsController < ApplicationController
   end
 
   def destroy
+    @event = Event.find(params[:id])
+    
     @event.destroy
     flash[:notice] = "イベントを削除しました。"
-    redirect_back(fallback_location: root_path)
+    redirect_to user_path(@event.user)
   end
   
   
