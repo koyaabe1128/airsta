@@ -36,6 +36,9 @@
               
               <h6 class ="col-6 col-xl-4 font-weight-bold">ジャンル</h6>
               <div class ="col-10 col-xl-7"><%= event.genre %></div>
+              
+              <div class="col-6"><%= link_to "詳細はこちら", event_path(event.id), class: "no-underline" %></div>
+              
             </div>
           </div>
         </div>

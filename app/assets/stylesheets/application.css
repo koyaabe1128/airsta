@@ -46,6 +46,7 @@ textarea {
     width: 280px;
     height: 280px;
     border-radius: 50%;
+    object-fit: cover;
 }
 
 .followings-icon {

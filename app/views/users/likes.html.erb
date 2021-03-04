@@ -64,6 +64,9 @@
               <div class ="ml-5 font-weight-bold">ジャンル</div>
               <div class ="ml-2"><%= event.genre %></div>
             </div>
+            <div class ="row">
+              <div class ="ml-5 mt-4"><%= link_to "詳細はこちら", event_path(event.id), class: "no-underline" %></div>
+            </div>
           </div>
         </div>
       </div>

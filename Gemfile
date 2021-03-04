@@ -65,7 +65,10 @@ gem 'kaminari'
 
 gem 'jquery-rails'
 
-gem 'carrierwave'
+gem 'carrierwave', '~> 1.3', '>= 1.3.1'
+gem 'cloudinary'
+
+gem 'mini_magick'
 
 gem 'pry-byebug', group: :development
 
