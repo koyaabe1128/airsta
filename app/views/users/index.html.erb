@@ -1,0 +1,27 @@
+<div class ="row">
+  <div class ="col-md-6 col-lg-4 mx-auto mt-5">
+    <% @users.each do |user| %>
+      <div class ="row followings-size mt-3">
+        <div class ="col-3">
+          <div class ="row">
+            <div class ="mx-auto">
+              <% if user.image? %>
+                <%= image_tag user.image.url, class: "followings-icon" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class ="col-9">
+          <div class="row">
+            <div class ="mt-1">
+              <%= link_to user_path(user.id), class:"user-btn" do %>
+                <%= user.name %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+    <% end %>
+  </div>
+</div>

@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   
-  before_action :require_user_logged_in, only: [:show, :edit, :likes, :followings]
+  before_action :require_user_logged_in, only: [:index, :show, :edit, :likes, :followings]
+  
+  def index
+    @users = User.order(id: :desc)
+  end
   
   def show
     @user = User.find(params[:id])
