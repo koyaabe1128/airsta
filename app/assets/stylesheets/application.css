@@ -18,6 +18,11 @@
     background-color: #fafafa;
 }
 
+.flash {
+    background-color: lightblue;
+    padding-left: 20px;
+}
+
 textarea {
   resize: none;
   

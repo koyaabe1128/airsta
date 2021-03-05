@@ -21,7 +21,6 @@ class UsersController < ApplicationController
       flash[:notice] = "ユーザーの登録に成功しました。"
       redirect_to @user
     else
-      flash.now[:notice] = "ユーザーの登録に失敗しました。"
       render :new
     end
     
@@ -35,10 +34,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     
     if @user.update(user_profile_params)
-      flash[:notice] = "編集しました。"
+      flash[:notice] = "プロフィールを編集しました。"
       redirect_to @user
     else
-      flash.now[:notice] = "編集できませんでした。"
       render :edit
     end
     
