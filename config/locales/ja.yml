@@ -1,0 +1,23 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+    attributes:
+      user:
+        name: ユーザー名
+        email: メールアドレス
+        password: パスワード
+        
+ja:
+  activerecord:
+    models:
+      event: イベント
+    attributes:
+      event:
+        title: イベント名
+        price: 料金
+        place: 場所
+        genre: ジャンル
+        detail: 説明欄
+        event_at: 日時
+        image: イベント画像

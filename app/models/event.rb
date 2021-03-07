@@ -8,9 +8,17 @@ class Event < ApplicationRecord
   validates :detail, presence: true, length: { maximum:255 }
   validates :event_at, presence: true
   validates :image, presence: true
+  validate :event_at_cannot_past
+  
   
   has_many :likes, dependent: :destroy
   
   mount_uploader :image, ImageUploader
+  
+  def event_at_cannot_past
+    if event_at < Date.today
+      errors.add(:event_at, "は過去の日付を選択できません")
+    end
+  end
 
 end

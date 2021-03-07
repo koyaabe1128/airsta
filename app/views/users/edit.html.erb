@@ -3,28 +3,29 @@
   <hr>
   
   <%= form_with(model: @user, local:true,) do |f| %>
+    <%= render 'layouts/error_messages', model: f.object %>
   
-  <div class ="row mt-5">
-    <div class ="col-xl-5">
-      <div class ="row">
-        <div class ="mx-auto">
-          <% if @user.image? %>
-            <%= image_tag @user.image.url, class: "img-responsive center-block icon" %>
-          <% end %>
-        </div>
-      </div>
-      <div class="form-group row mt-4">
-        <div class ="col-6 col-md-3 font-weight-bold">
-          <%= f.label :image, '画像' %>
-        </div>
-        <div class ="col-11 col-md-7">
-          <%= f.file_field :image, class: 'form-control' %>
-        </div>
-      </div>
-    </div>
-    <div class ="col-xl-7">
+    <div class ="row mt-5">
       
-    
+      <div class ="col-xl-5">
+        <div class ="row">
+          <div class ="mx-auto">
+            <% if @user.image? %>
+              <%= image_tag @user.image.url, class: "img-responsive center-block icon" %>
+            <% end %>
+          </div>
+        </div>
+        <div class="form-group row mt-4">
+          <div class ="col-6 col-md-3 font-weight-bold">
+            <%= f.label :image, '画像' %>
+          </div>
+          <div class ="col-11 col-md-7">
+            <%= f.file_field :image, class: 'form-control' %>
+          </div>
+        </div>
+      </div>
+      
+      <div class ="col-xl-7">
         <div class="form-group row">
           <div class ="col-6 col-md-3 font-weight-bold">
             <%= f.label :name, '名前' %>
@@ -67,7 +68,7 @@
           </div>
         </div>
         
-      <% end %>
+      </div>
     </div>
-  </div>
+  <% end %>
 </div>

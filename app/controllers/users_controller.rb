@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   
   before_action :require_user_logged_in, only: [:index, :show, :edit, :likes, :followings]
+  before_action :correct_user, only: [:edit, :update, :likes, :followings]
   
   def index
     @users = User.order(id: :desc)
@@ -60,6 +61,13 @@ class UsersController < ApplicationController
   
   def user_profile_params
     params.require(:user).permit(:name, :genre, :place, :introduction, :image)
+  end
+  
+  def correct_user
+    @user = User.find(params[:id])
+    unless current_user.id == @user.id
+      redirect_to current_user
+    end
   end
 
 end

@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   
   before_action :require_user_logged_in
+  before_action :correct_users_event, only: [:edit, :update, :destroy]
   
   def index
     @events = Event.order(id: :desc).page(params[:page]).per(10)
@@ -54,9 +55,15 @@ class EventsController < ApplicationController
   private
   
   #Strong Parameter
-  
   def event_params
     params.require(:event).permit(:title, :event_at, :price, :place, :genre, :detail, :image)
+  end
+  
+  def correct_users_event
+    @event = current_user.events.find_by(id: params[:id])
+    unless @event
+      redirect_to current_user
+    end
   end
 
 end

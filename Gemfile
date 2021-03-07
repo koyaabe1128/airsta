@@ -72,6 +72,9 @@ gem 'mini_magick'
 
 gem 'pry-byebug', group: :development
 
+#エラーメッセージを日本語化する
+gem 'rails-i18n'
+
 group :production do
   gem 'pg', '>= 0.18', '< 2.0'
 end
