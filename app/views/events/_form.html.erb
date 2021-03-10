@@ -28,6 +28,14 @@
         <%= f.text_field :title , class: 'form-control' %>
       </div>
     </div>
+    <div class ="form-group row">
+      <div class ="col-6 col-md-3 font-weight-bold">
+        <%= f.label :kind, '種別' %>
+      </div>
+      <div class ="col-11 col-md-7">
+        <%= f.select :kind, Event.kinds.keys %>
+      </div>
+    </div>
       
     <div class = "form-group row">
       <div class = "col-6 col-md-3 font-weight-bold">
@@ -35,7 +43,6 @@
       </div>
       <div class ="col-11 col-md-7">
         <%= raw sprintf(f.datetime_select(:event_at, use_month_numbers: true, start_year: (Time.now.year), end_year: (Time.now.year + 2), minute_step: 10, date_separator: '%s', datetime_separator: '%s'), '年', '月', '日') %>
-              
       </div>
     </div>
      

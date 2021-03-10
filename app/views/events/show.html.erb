@@ -32,6 +32,10 @@
         <h2 class ="col-11 mb-5 font-weight-bold"><%= @event.title %></h2>
       </div>
       <div class ="row offset-1">
+        <h6 class ="col-6 col-md-3 font-weight-bold">種類</h6>
+        <div class ="col-10 col-md-7"><%= @event.kind %></div>
+        
+        
         <h6 class ="col-6 col-md-3 font-weight-bold">日時</h6>
         <div class ="col-10 col-md-7"><%= @event.event_at.strftime("%m/%d %H:%M~") %></div>
         

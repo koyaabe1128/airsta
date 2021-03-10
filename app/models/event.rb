@@ -8,6 +8,7 @@ class Event < ApplicationRecord
   validates :detail, presence: true, length: { maximum:255 }
   validates :event_at, presence: true
   validates :image, presence: true
+  validates :kind, presence: true
   validate :event_at_cannot_past
   
   
@@ -20,5 +21,9 @@ class Event < ApplicationRecord
       errors.add(:event_at, "は過去の日付を選択できません")
     end
   end
+  
+  enum kind:{
+    プライベートレッスン:1, 練習会:2
+  }
 
 end

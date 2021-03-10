@@ -56,7 +56,7 @@ class EventsController < ApplicationController
   
   #Strong Parameter
   def event_params
-    params.require(:event).permit(:title, :event_at, :price, :place, :genre, :detail, :image)
+    params.require(:event).permit(:title, :event_at, :price, :place, :genre, :detail, :image, :kind)
   end
   
   def correct_users_event
@@ -65,5 +65,5 @@ class EventsController < ApplicationController
       redirect_to current_user
     end
   end
-
+  
 end

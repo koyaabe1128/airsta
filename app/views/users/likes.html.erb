@@ -49,6 +49,10 @@
               <% end %>
             </div>
             <div class ="row">
+              <div class ="ml-5 font-weight-bold">種類</div>
+              <div class ="ml-2"><%= event.kind %></div>
+            </div>
+            <div class ="row">
               <div class ="ml-5 font-weight-bold">日時</div>
               <div class ="ml-2"><%= event.event_at.strftime("%m/%d %H:%M~") %></div>
             </div>
@@ -73,6 +77,3 @@
     </div>
   <% end %>
 </div>
-
-
-¥
